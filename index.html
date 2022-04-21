@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Etch-A-Sketch</title>
+</head>
+
+<body>
+    <div id="full-display">
+        <div id="grid">
+
+        </div>
+        <div id="side-panel">
+            <div id="sizeInput">
+                <label for="grid-size">What size grid?</label>
+                <input type="text" placeholder="16" id="grid-size">
+                <button id="ok">OK</button>
+            </div>
+            <div>
+                <button>Start Over</button>
+            </div>
+            <div id="colorSelect">
+                <label for="pet-select">Choose a color:</label>
+                <select name="colors" id="colorSelect">
+                    <option value="">--Please choose an option--</option>
+                    <option value="dog">Black</option>
+                    <option value="cat">Grey</option>
+                    <option value="hamster">Rainbow</option>
+                    <option value="parrot">White</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
