@@ -8,6 +8,7 @@ body {
 input {
   width: 50px;
 }
+
 #full-display {
   display: flex;
   flex-direction: row-reverse;
@@ -15,6 +16,7 @@ input {
   margin-top: 100px;
   padding: 25px;
   background-color: darkred;
+  border-radius: 10px;
 }
 
 label {
