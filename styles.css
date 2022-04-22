@@ -9,20 +9,33 @@ input {
   width: 50px;
 }
 
+p {
+  font: 1.2rem "Fira Sans", sans-serif;
+  text-align: center;
+  
+}
+
+label {
+    font: 1rem 'Fira Sans', sans-serif;
+    padding-left: 10px;
+}
+
 #full-display {
   display: flex;
   flex-direction: row-reverse;
   gap: 50px;
   margin-top: 100px;
   padding: 25px;
-  background-color: darkred;
+  background-color: #c00021;
   border-radius: 10px;
 }
 
-label {
+#gridSize{
   color: white;
-  font-size: 20px;
+  font-size: 30px;
+  padding-left: 0px;
 }
+
 .grid {
   width: 700px;
   height: 700px;
@@ -36,7 +49,7 @@ label {
 }
 
 #side-panel {
-  background-color: rgb(25, 83, 102);
+  background-color: #004e89;
   width: 200px;
   display: flex;
   flex-direction: column;
@@ -49,6 +62,17 @@ label {
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  height: 34px;
+}
+
+#ok, #grid-size {
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
+
+#ok:hover {
+  background-color: rgba(200, 200, 200, 1);
 }
 
 #colorSelect {
@@ -65,6 +89,92 @@ label {
   margin: none;
   box-sizing: border-box;
   border: 0.25px solid grey;
+}
 
+.colorOptions {
+  display: flex;
+  align-items: center;
+  padding: 5px 0px;
+}
 
+.colorSelect {
+  width: 30px;
+  height: 30px;
+  border-radius: 30%
+}
+
+/* .colorSelect:hover {
+    background-color: rgba(255, 255, 150, 1);
+} */
+
+.colorSelect:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+#selection-box {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(123, 158, 204, 0.8);
+  width: 150px;
+  border-radius: 10px;
+  padding: 0px 10px 10px 10px;
+}
+
+#black {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+#black:hover {
+  width: 35px;
+  height: 35px;
+}
+
+#grey {
+  background-color: rgba(100, 100, 100, 1);
+}
+
+#grey:hover {
+  width: 35px;
+  height: 35px;
+}
+
+#white {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+#white:hover {
+  width: 35px;
+  height: 35px;
+}
+
+#custom {
+  box-sizing: border-box;
+  height: 30px;
+  width: 30px;
+}
+
+#custom:hover {
+  width: 35px;
+  height: 35px;
+}
+
+#random {
+  background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+}
+
+#startOver {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  font-size: 25px;
+  border: none;
+}
+
+#startOver:hover {
+  font-size: 23px;
+  border: 2px solid rgb(50, 50, 50);
 }

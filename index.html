@@ -16,25 +16,38 @@
         </div>
         <div id="side-panel">
             <div id="sizeInput">
-                <label for="grid-size">What size grid?</label>
+                <label for="grid-size" id="gridSize">Grid Size</label>
                 <div>
                     <input type="text" placeholder="16" id="grid-size">
                     <button id="ok">OK</button>
                 </div>
 
             </div>
-            <div id="colorSelect">
-                <label for="pet-select">Choose a color:</label>
-                <select name="colors" id="colorSelect">
-                    <option value="">--Please choose an option--</option>
-                    <option value="dog">Black</option>
-                    <option value="cat">Grey</option>
-                    <option value="hamster">Rainbow</option>
-                    <option value="parrot">White</option>
-                </select>
+            <div id="selection-box">
+                <div>
+                    <p>Choose a color</p>
+                </div>
+
+
+                <div class="colorOptions">
+                    <input type="button" id="black" name="head" value="" class="colorSelect">
+                    <label for="head">Black</label>
+                </div>
+                <div class="colorOptions">
+                    <input type="button" id="grey" name="head" value="" class="colorSelect">
+                    <label for="grey">Grey</label>
+                </div>
+                <div class="colorOptions">
+                    <input type="button" id="white" name="head" value="" class="colorSelect">
+                    <label for="white">White</label>
+                </div>
+                <div class="colorOptions">
+                    <input type="color" id="custom" name="head" value="#e66465" class="colorSelect">
+                    <label for="custom">Custom</label>
+                </div>
             </div>
             <div>
-                <button>Start Over</button>
+                <button id="startOver">Start Over</button>
             </div>
 
         </div>
