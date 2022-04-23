@@ -19,30 +19,31 @@
             <!-- Color Selection Box -->
             <div id="panel-top-row">
 
-                <div>
+                <!-- <div>
                     <p>Choose a color:</p>
-                </div>
-                <div class="colorOptions">
+                </div> -->
+                <div class="colorOptions" id="blackButton">
                     <input type="button" id="black" name="head" value="" class="colorSelect">
-                    <label for="head">Black</label>
+                    <label for="head" class="colorLabel">Black</label>
                 </div>
-                <div class="colorOptions">
+                <div class="colorOptions" id="greyButton">
                     <input type="button" id="grey" name="head" value="" class="colorSelect">
-                    <label for="grey">Grey</label>
+                    <label for="grey" class="colorLabel">Grey</label>
                 </div>
-                <div class="colorOptions">
+                <div class="colorOptions" id="whiteButton">
                     <input type="button" id="white" name="head" value="" class="colorSelect">
-                    <label for="white">White</label>
+                    <label for="white" class="colorLabel">White</label>
                 </div>
-                <div class="colorOptions">
+                <div class="colorOptions" id="customButton">
                     <input type="color" id="custom" name="head" value="#e66465" class="colorSelect">
-                    <label for="custom">Custom</label>
+                    <label for="custom" class="colorLabel">Custom</label>
                 </div>
             </div>
             <!-- Grid size input -->
             <div id="panel-botttom-row">
                 <div id="sizeInput">
                     <label for="grid-size" id="gridSize">Grid Size</label>
+                    <p>(max size is 80)</p>
                     <div>
                         <input type="text" placeholder="16" id="grid-size">
                         <button id="ok">OK</button>

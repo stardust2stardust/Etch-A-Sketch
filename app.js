@@ -9,7 +9,6 @@ const white = document.querySelector('#white');
 const custom = document.querySelector('#custom');
 
 
-
 // default grid is 16 x 16
 for (i = 0; i < 256; i++) {
     const pixel = document.createElement('div');
@@ -19,20 +18,20 @@ for (i = 0; i < 256; i++) {
     grid.append(pixel);
 }
 
-// function for clear all divs out of grid box
+// clear all divs out of grid box
 function clearGrid() {
     while (grid.firstChild) {
         grid.removeChild(grid.firstChild);
     }
 }
 
-// function for resetting grid back to 16x16
+// reset grid back to 16x16
 function resetGrid() {
     clearGrid();
     makeGrid(16);
 }
 
-// function for getting new size from user input
+// get new size from user input
 function getNewSize() {
     let newSize = size.value;
     newSize = parseInt(newSize);
@@ -70,15 +69,8 @@ startOver.addEventListener('click', () => {
 });
 
 
-colors.addEventListener('click', () => {
 
-});
 
-const squares = grid.children;
-squares[0].addEventListener('click', () => {
-    changeColor(black);
-});
 
-function changeColor(color) {
-    squares[0].style.backgroundColor = `'${color}'`;
-}
+
+
