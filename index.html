@@ -12,23 +12,16 @@
 <body>
     <div id="full-display">
         <div class="grid">
-
+            <!--  drawing grid modified with javascript -->
         </div>
-        <div id="side-panel">
-            <div id="sizeInput">
-                <label for="grid-size" id="gridSize">Grid Size</label>
+        <!-- Control Panel -->
+        <div id="control-panel">
+            <!-- Color Selection Box -->
+            <div id="panel-top-row">
+
                 <div>
-                    <input type="text" placeholder="16" id="grid-size">
-                    <button id="ok">OK</button>
+                    <p>Choose a color:</p>
                 </div>
-
-            </div>
-            <div id="selection-box">
-                <div>
-                    <p>Choose a color</p>
-                </div>
-
-
                 <div class="colorOptions">
                     <input type="button" id="black" name="head" value="" class="colorSelect">
                     <label for="head">Black</label>
@@ -46,9 +39,24 @@
                     <label for="custom">Custom</label>
                 </div>
             </div>
-            <div>
-                <button id="startOver">Start Over</button>
+            <!-- Grid size input -->
+            <div id="panel-botttom-row">
+                <div id="sizeInput">
+                    <label for="grid-size" id="gridSize">Grid Size</label>
+                    <div>
+                        <input type="text" placeholder="16" id="grid-size">
+                        <button id="ok">OK</button>
+                    </div>
+
+                </div>
+
+                <!-- Start Over / Reset grid -->
+                <div>
+                    <button id="startOver">Start Over</button>
+                </div>
+
             </div>
+
 
         </div>
 

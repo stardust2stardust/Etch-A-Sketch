@@ -22,7 +22,7 @@ label {
 
 #full-display {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   gap: 50px;
   margin-top: 100px;
   padding: 25px;
@@ -32,29 +32,30 @@ label {
 
 #gridSize{
   color: white;
-  font-size: 30px;
+  font-size: 20px;
   padding-left: 0px;
 }
 
 .grid {
-  width: 700px;
-  height: 700px;
+  width: 550px;
+  height: 550px;
   background-color: grey;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(16, 43.75px);
-  grid-template-rows: repeat(16, 43.75px) ;
+  grid-template-columns: repeat(16, 34.375px);
+  grid-template-rows: repeat(16, 34.375px) ;
   
   
 }
 
-#side-panel {
+#control-panel {
   background-color: #004e89;
-  width: 200px;
+  width: 550px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  align-items: center; 
+ 
+  
+ 
 }
  
 #sizeInput {
@@ -62,7 +63,7 @@ label {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  height: 34px;
+  /* height: 100px; */
 }
 
 #ok, #grid-size {
@@ -95,12 +96,14 @@ label {
   display: flex;
   align-items: center;
   padding: 5px 0px;
+  
 }
 
 .colorSelect {
   width: 30px;
   height: 30px;
-  border-radius: 30%
+  border-radius: 30%;
+  border: none;
 }
 
 /* .colorSelect:hover {
@@ -112,15 +115,24 @@ label {
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
 }
 
-#selection-box {
+#panel-top-row {
   display: flex;
-  flex-direction: column;
-  background-color: rgba(123, 158, 204, 0.8);
-  width: 150px;
+  justify-content: space-evenly;
+  align-items: center;
+  box-sizing: border-box;
+  /* background-color: rgba(123, 158, 204, 0.8); */
+  width: 550px;
   border-radius: 10px;
   padding: 0px 10px 10px 10px;
+  color:rgba(200, 200, 200, 1)
 }
-
+#panel-botttom-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 10px;
+  
+}
 #black {
   background-color: rgba(0, 0, 0, 1);
 }
@@ -167,14 +179,14 @@ label {
 }
 
 #startOver {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  font-size: 25px;
+  font-size: 20px;
   border: none;
 }
 
 #startOver:hover {
-  font-size: 23px;
+  font-size: 17px;
   border: 2px solid rgb(50, 50, 50);
 }
