@@ -65,6 +65,18 @@ label {
   border: 0.25px solid grey;
 }
 
+.pixel-black {
+  background-color: black;
+}
+
+.pixel-white {
+  background-color: white;
+}
+
+.pixel-custom {
+  background-color: #e66465;
+}
+
 #control-panel {
   background-color: #004e89;
   width: 550px;
