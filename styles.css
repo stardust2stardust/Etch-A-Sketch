@@ -69,9 +69,6 @@ label {
   background-color: black;
 }
 
-.pixel-white {
-  background-color: white;
-}
 
 .pixel-custom {
   background-color: #e66465;
@@ -135,14 +132,17 @@ label {
   border: 1px solid black;
 }
 
-#grey {
-  background-color: rgba(100, 100, 100, 1);
+#rainbow {
+  /* background-color: rgba(100, 100, 100, 1); */
   border: 1px solid black;
+ 
+  background-image: linear-gradient(to top left,
+                                      rgb(224, 49, 49),
+                                      rgba(223, 220, 47, 1) 30%,
+                                      rgba(49, 47, 223, 1));
 }
 
-#white {
-  background-color: rgba(255, 255, 255, 1);
-}
+
 
 #custom {
   box-sizing: border-box;
@@ -220,12 +220,7 @@ label {
   background-color: black;
 }
 
-/* #random {
-  background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-} */
+
 
 /* #colorSelect {
   display: flex;
