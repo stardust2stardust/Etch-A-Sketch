@@ -59,6 +59,7 @@ function makeGrid(newSize) {
         pixel.style.height = `${pixelHeight}px`;
         grid.append(pixel);
     }
+    currentColor = 'white'
 }
 
 
