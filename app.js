@@ -6,6 +6,7 @@ const colors = document.querySelector('.colorOptions');
 const black = document.querySelector('#blackButton');
 const grey = document.querySelector('#greyButton');
 const random = document.querySelector('#randomButton');
+const erase = document.querySelector('#eraseButton')
 let currentColor = '';
 
 // default grid is 16 x 16
@@ -28,10 +29,9 @@ function clearGrid() {
 function resetGrid() {
     clearGrid();
     makeGrid(16);
-
 }
 
-// get new size from user input
+// get new size from user input (max is 100)
 function getNewSize() {
     let newSize = size.value;
     if (newSize > 100) {
@@ -43,6 +43,7 @@ function getNewSize() {
         return newSize
     }
 }
+
 // make the new grid with newSize
 function makeGrid(newSize) {
     // Pixel size
@@ -58,62 +59,61 @@ function makeGrid(newSize) {
         pixel.style.height = `${pixelHeight}px`;
         grid.append(pixel);
     }
-
 }
+
 
 function setToBlack() {
     if (document.getElementById('blackButton')) {
         currentColor = 'black';
-        console.log(`current color should be ${currentColor}`);
-        grid.addEventListener('click', draw);
+        draw();
     }
 }
+
 
 function setToGrey() {
     if (document.getElementById('greyButton')) {
         currentColor = 'grey';
-        console.log(`current color should be ${currentColor}`);
-        grid.addEventListener('click', draw);
-
+        draw()
     }
 }
+
 
 function setToRandom() {
     if (document.getElementById('randomButton')) {
         const r = Math.floor(Math.random() * 255)
         const g = Math.floor(Math.random() * 255)
         const b = Math.floor(Math.random() * 255)
-        currentColor = `rgb(${r}, ${g}, ${b})`
-        console.log(`current color should be ${currentColor}`);
+        currentColor = `rgb(${r}, ${g}, ${b})`;
+        draw();
     }
-
 }
 
+
+function setToErase() {
+    if (document.getElementById('eraseButton')) {
+        currentColor = 'white';
+        draw()
+    }
+}
+
+
 function draw() {
-    console.log(currentColor)
     grid.addEventListener('mouseover', startDrawing);
-    // grid.addEventListener('click', () => {
-    //     grid.removeEventListener('mouseover', startDrawing);
-    // })
 }
 
 
 function startDrawing(e) {
-    console.log('mouseover working');
-
     if (e.target.classList.contains('pixel')) {
         e.target.style.backgroundColor = currentColor;
     }
 }
 
+
 // listeners for color buttons
 black.addEventListener('click', setToBlack);
 grey.addEventListener('click', setToGrey);
 random.addEventListener('click', setToRandom)
-
-// listener for grid drawing area
-// grid.addEventListener('click', draw);
-
+erase.addEventListener('click', setToErase)
 
 
 // when 'ok' button clicked, a new grid will appear with
@@ -127,7 +127,6 @@ okBtn.addEventListener('click', () => {
 startOver.addEventListener('click', () => {
     resetGrid();
     grid.removeEventListener('mouseover', startDrawing);
-
 });
 
 
