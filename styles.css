@@ -34,21 +34,21 @@ label {
 #full-display {
   display: flex;
   flex-direction: column;
-  
-  margin-top: 80px;
+  align-items: center;
+  margin-top: 50px;
   padding: 25px;
   background-color: #c00021;
   border-radius: 10px;
 }
 
 .grid {
-  width: 550px;
-  height: 550px;
+  width: 500px;
+  height: 500px;
   background-color: grey;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(16, 34.375px);
-  grid-template-rows: repeat(16, 34.375px) ;
+  grid-template-columns: repeat(16, 31.25px);
+  grid-template-rows: repeat(16, 31.25px) ;
   box-shadow: 0px 0px 10px black;
   margin-bottom: 30px;
   
@@ -56,22 +56,13 @@ label {
 }
 
 .pixel {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   display: inline-block;
   /* height: 31.25px;
   width: 31.25px; */
   margin: none;
   box-sizing: border-box;
   border: 0.25px solid grey;
-}
-
-.pixel-black {
-  background-color: black;
-}
-
-
-.pixel-custom {
-  background-color: #e66465;
 }
 
 #control-panel {
@@ -81,12 +72,13 @@ label {
   flex-direction: column;
   box-shadow: 0px 0px 10px black;
   border-radius: 10px;
+  
 }
 
 /* PANEL TOP ROW */
 #panel-top-row {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   box-sizing: border-box;
   /* background-color: rgba(123, 158, 204, 0.8); */
@@ -103,7 +95,7 @@ label {
   border-radius: 10px;
   padding: 5px 10px;
   box-shadow: 0px 0px 5px black;
-  width: 100px;
+  width: 120px;
   background-color: #0f63a3;
   
   
@@ -132,14 +124,20 @@ label {
   border: 1px solid black;
 }
 
-#rainbow {
+#grey {
+  background-color: rgba(150, 150, 150, 1);
+  border: 1px solid black;
+}
+
+#random {
   /* background-color: rgba(100, 100, 100, 1); */
   border: 1px solid black;
- 
-  background-image: linear-gradient(to top left,
-                                      rgb(224, 49, 49),
-                                      rgba(223, 220, 47, 1) 30%,
-                                      rgba(49, 47, 223, 1));
+  height: 25px;
+  width: 25px;
+  box-sizing: border-box;
+  background: linear-gradient(217deg, rgba(255,0,0,.8), rgba(255,0,0,0) 70.71%),
+              linear-gradient(127deg, rgba(0,255,0,.8), rgba(0,255,0,0) 70.71%),
+              linear-gradient(336deg, rgba(0,0,255,.8), rgba(0,0,255,0) 70.71%);
 }
 
 
@@ -156,7 +154,7 @@ label {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 20px 20px;
+  padding: 20px 0px;
 }
 
 #gridSize{

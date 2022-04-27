@@ -4,16 +4,16 @@ const okBtn = document.querySelector('#ok');
 const startOver = document.querySelector('#startOver');
 const colors = document.querySelector('.colorOptions');
 const black = document.querySelector('#blackButton');
-const rainbow = document.querySelector('#rainbowButton');
-const custom = document.querySelector('#custom');
-let currentColor = 'blue';
+const grey = document.querySelector('#greyButton');
+const random = document.querySelector('#randomButton');
+let currentColor = '';
 
 // default grid is 16 x 16
 for (i = 0; i < 256; i++) {
     const pixel = document.createElement('div');
     pixel.classList.add('pixel')
-    pixel.style.width = '34.375px';
-    pixel.style.height = '34.375px';
+    pixel.style.width = '31.25px';
+    pixel.style.height = '31.25px';
     grid.append(pixel);
 }
 
@@ -28,6 +28,7 @@ function clearGrid() {
 function resetGrid() {
     clearGrid();
     makeGrid(16);
+
 }
 
 // get new size from user input
@@ -40,8 +41,8 @@ function getNewSize() {
 // make the new grid with newSize
 function makeGrid(newSize) {
     // Pixel size
-    let pixelWidth = 550 / newSize;
-    let pixelHeight = 550 / newSize;
+    let pixelWidth = 500 / newSize;
+    let pixelHeight = 500 / newSize;
     // Grid size
     grid.style["grid-template-columns"] = `repeat(${newSize}, ${pixelWidth}px)`;
     grid.style["grid-template-rows"] = `repeat(${newSize}, ${pixelHeight}px)`;
@@ -52,54 +53,68 @@ function makeGrid(newSize) {
         pixel.style.height = `${pixelHeight}px`;
         grid.append(pixel);
     }
+
 }
 
 function setToBlack() {
     if (document.getElementById('blackButton')) {
-        currentColor = 'pixel-black';
-        console.log('current color should be black');
+        currentColor = 'black';
+        console.log(`current color should be ${currentColor}`);
         grid.addEventListener('click', draw);
     }
 }
 
-// function setToRainbow() {
-//     if (document.getElementById('customButton')) {
-//         currentColor = custom.value
-//         console.log(currentColor);
-//         currentColor = `${currentColor}`
-//     }
-// }
+function setToGrey() {
+    if (document.getElementById('greyButton')) {
+        currentColor = 'grey';
+        console.log(`current color should be ${currentColor}`);
+        grid.addEventListener('click', draw);
+
+    }
+}
+
+function setToRandom() {
+    if (document.getElementById('rainbowButton')) {
+        const r = Math.floor(Math.random() * 255)
+        const g = Math.floor(Math.random() * 255)
+        const b = Math.floor(Math.random() * 255)
+        currentColor = `rgb(${r}, ${g}, ${b})`
+        console.log(`current color should be ${currentColor}`);
+    }
+
+}
 
 function draw() {
     console.log(currentColor)
     grid.addEventListener('mouseover', startDrawing);
-    grid.addEventListener('click', () => {
-        grid.removeEventListener('mouseover', startDrawing);
-    })
+    // grid.addEventListener('click', () => {
+    //     grid.removeEventListener('mouseover', startDrawing);
+    // })
 }
+
 
 function startDrawing(e) {
     console.log('mouseover working');
+
     if (e.target.classList.contains('pixel')) {
-        e.target.classList.add(`${currentColor}`);
+        e.target.style.backgroundColor = currentColor;
     }
 }
 
-// Add EL for clicking on Black Button
-// Should set currentColor to Black 
+// listeners for color buttons
 black.addEventListener('click', setToBlack);
-// rainbow.addEventListener('click', setToRainbow);
+grey.addEventListener('click', setToGrey);
+random.addEventListener('click', setToRandom)
 
-grid.addEventListener('click', draw);
+// listener for grid drawing area
+// grid.addEventListener('click', draw);
 
 
 
-// when user clicks 'ok' button, a new grid will appear with 
+// when 'ok' button clicked, a new grid will appear with
 // specified size
 okBtn.addEventListener('click', () => {
-    // clear the grid (remove children)
     clearGrid();
-    // make new grid
     makeGrid(getNewSize());
 });
 
@@ -107,6 +122,7 @@ okBtn.addEventListener('click', () => {
 startOver.addEventListener('click', () => {
     resetGrid();
     grid.removeEventListener('mouseover', startDrawing);
+
 });
 
 
