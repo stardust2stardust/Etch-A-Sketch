@@ -34,10 +34,15 @@ function resetGrid() {
 // get new size from user input
 function getNewSize() {
     let newSize = size.value;
-    newSize = parseInt(newSize);
-    return newSize
+    if (newSize > 100) {
+        alert('Please enter a number less than 100.');
+        resetGrid();
+    }
+    else {
+        newSize = parseInt(newSize);
+        return newSize
+    }
 }
-
 // make the new grid with newSize
 function makeGrid(newSize) {
     // Pixel size
@@ -74,7 +79,7 @@ function setToGrey() {
 }
 
 function setToRandom() {
-    if (document.getElementById('rainbowButton')) {
+    if (document.getElementById('randomButton')) {
         const r = Math.floor(Math.random() * 255)
         const g = Math.floor(Math.random() * 255)
         const b = Math.floor(Math.random() * 255)
